@@ -1,0 +1,8 @@
+<div class="input-container">
+    <input [type]="type" [placeholder]="placeholder" [(ngModel)]="value">
+    @if(showIcon) {
+    <img [src]="icon" alt="" width="20" (click)="showPassword()">
+    }
+</div>
+
+

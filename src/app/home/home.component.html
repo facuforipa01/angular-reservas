@@ -1,0 +1,46 @@
+<div class="boxMain">
+
+    <p class="text-dark text-center mt-4">admin page</p>
+
+    <div class="container mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#id</th>
+                    <th scope="col">Fecha de entrada</th>
+                    <th scope="col">Fecha de salida</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col"> Num de departamento</th>
+                    <th  scope="col">Num de usuario asociado</th>
+                    <th>Acciones</th>
+                   
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                @for (reserv of reserva; track reserva) {
+
+                    <tr>
+                        <th scope="row">{{reserv.id}}</th>
+                        <td>{{reserv.fechaEntrada}}</td>
+                        <td>{{reserv.fechaSalida}}</td>
+                        <td>{{reserv.estado}}</td>
+                        <td>{{reserv.departamento}}</td>
+                        <td>{{reserv.usuario}}</td>
+                        <div>
+                            <td>
+                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                            </td>
+                            <td>
+                                <button  class="btn btn-success"><i class="bi bi-check-lg"></i></button>
+                            </td>
+                        </div>
+                    </tr>
+
+                }
+                
+               
+            </tbody>
+        </table>
+    </div>
+
+</div>
