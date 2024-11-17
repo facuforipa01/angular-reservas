@@ -4,5 +4,4 @@ export interface UsuarioI extends ReservasI {
     id:number;
     nombre: string;
     email: string;
-    isActive: boolean;
 }

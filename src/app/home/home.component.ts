@@ -1,8 +1,7 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HomeService } from './home.service';
 import { ReservasI } from '../interfaces/reservas.interface';
-import { UsuarioI } from '../interfaces/usuario.interface';
-import { DepartamentoI } from '../interfaces/departamento.interface';
+
 
 @Component({
   selector: 'app-home',
@@ -11,42 +10,24 @@ import { DepartamentoI } from '../interfaces/departamento.interface';
   animations: [],
   providers: [],
 })
-export class HomeComponent implements OnInit {
-  
-  
+
+export class HomeComponent implements OnInit{
+  reserva: ReservasI[] = [];
+
+  constructor(private homeService: HomeService) {}
+
   ngOnInit(): void {
-    this.getAll();
-  }
-
-  private readonly homeService = inject(HomeService);
-
-  reserva! : ReservasI[];
-  usuario!: UsuarioI[];
-  departamento!: DepartamentoI[]; 
-
-
-  // getAll(){
-  //   this.homeService.getAllParcelas().subscribe((data:any) =>{
-  //     console.log(data);
-  //     this.parcela = data.parcelas
-  //   },( error) => {
-  //     console.log(error)
-  //   })
-  // }
-
-  getAll(){
-    const res = this.homeService.getAllReservas().subscribe({
-      next: (data) => {
-       
-        this.reserva = data;
-        console.log(data)
+    this.homeService.getAllReservas().subscribe({
+      next: (response) => {
+        if (response.ok) {
+          this.reserva = response.reservas.data;
+        } else {
+          console.error('Error en la respuesta:', response.msg);
+        }
       },
-      error: (e:any) => {
-        console.log({e})
-      }
-    })
+      error: (err) => {
+        console.error('Error al obtener reservas:', err);
+      },
+    });
   }
-
-
-
 }

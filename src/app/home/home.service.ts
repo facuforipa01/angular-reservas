@@ -1,27 +1,19 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
-import { ReservasI } from '../interfaces/reservas.interface';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ResponseI } from '../interfaces/response.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HomeService  {
-  // a = fetch('url').then((data) => {
-  //   console.log(data);
-  // });
+  
+  private readonly url = 'http://localhost:3000/api';
 
-  private readonly http = inject(HttpClient);
+  constructor(private http: HttpClient) { }
 
-  private readonly url = 'http://localhost:3000/api/reservas';
-
-
-
-  getAllReservas():Observable<ReservasI[]>{
-    const direction = this.url + '/all-reservas'
-    return this.http.get<ReservasI[]>(direction)
-
+  getAllReservas():Observable<ResponseI>{
+    return this.http.get<ResponseI>(`${this.url}/reservas`);
   }
-
 
 }
