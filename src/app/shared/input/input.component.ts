@@ -13,7 +13,7 @@ export class InputComponent {
   /** El valor del placeholder */
   @Input() placeholder: string = 'Add a placeholder here...';
   /** Determina si mostrar o no el icono de la contraseña */
-  @Input() showIcon = false;
+  @Input() showIcon: boolean = false;
 
   @Input() name : string = '';
  

@@ -18,6 +18,11 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
     //canActivate: [loginGuard],
   },
+  {
+    path: 'tabla',
+    loadChildren: () => import('./tabla/tabla.module').then((m) => m.TablaModule),
+    //canActivate: [loginGuard],
+  },
 ];
 
 @NgModule({

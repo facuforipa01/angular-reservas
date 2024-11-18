@@ -26,7 +26,7 @@ usuario: any;
 
   checkToken() {
     if (this.loginService.getToken()) {
-      this.router.navigate(['/admin'])
+      this.router.navigate(['/tabla'])
     }
   }
   
@@ -53,7 +53,7 @@ usuario: any;
         // alert('Error de login ' + JSON.stringify(e));
       },
       complete: () => {
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/tabla']);
       },
     });
   }
