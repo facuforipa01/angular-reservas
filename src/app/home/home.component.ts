@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HomeService } from './home.service';
 import { ReservasI } from '../interfaces/reservas.interface';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,10 +10,10 @@ import { ReservasI } from '../interfaces/reservas.interface';
   providers: [],
 })
 
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
   reserva: ReservasI[] = [];
 
-  constructor(private homeService: HomeService) {}
+  constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
     this.homeService.getAllReservas().subscribe({
@@ -29,5 +28,11 @@ export class HomeComponent implements OnInit{
         console.error('Error al obtener reservas:', err);
       },
     });
+  }
+  rechazadaReserva() {
+    this.homeService.rechazadoReserva();
+  }
+  activadaReserva() {
+    this.homeService.activarReserva();
   }
 }

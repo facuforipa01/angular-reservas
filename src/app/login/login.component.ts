@@ -26,9 +26,11 @@ usuario: any;
 
   checkToken() {
     if (this.loginService.getToken()) {
-      this.router.navigate(['/home'])
+      this.router.navigate(['/admin'])
     }
-  } //funcion, que si existe un token en nuestro local storage o cookie, nos redireccione enseguida a la ventana principal, en vez de andar iniciando a cada rato
+  }
+  
+  //funcion, que si existe un token en nuestro local storage o cookie, nos redireccione enseguida a la ventana principal, en vez de andar iniciando a cada rato
 
   // login() {
   //   const user = { email: this.email, password: this.password };
@@ -51,7 +53,7 @@ usuario: any;
         // alert('Error de login ' + JSON.stringify(e));
       },
       complete: () => {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/admin']);
       },
     });
   }

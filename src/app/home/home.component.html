@@ -1,44 +1,43 @@
 <div class="boxMain">
 
-    <p class="text-dark text-center mt-4">admin page</p>
+    <h3 class="text-dark text-center mt-4">ADMIN PAGE</h3>
 
     <div class="container mt-5">
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">#id</th>
+                    <th scope="col">#ID</th>
                     <th scope="col">Fecha de entrada</th>
                     <th scope="col">Fecha de salida</th>
                     <th scope="col">Estado</th>
-                    <th scope="col"> Num de departamento</th>
-                    <th  scope="col">Num de usuario asociado</th>
+                    <th scope="col">Departamento</th>
+                    <th scope="col">Cliente</th>
                     <th>Acciones</th>
-                   
                 </tr>
             </thead>
+
             <tbody class="table-group-divider">
                 @for (reserv of reserva; track reserva) {
-
-                    <tr>
-                        <th scope="row">{{reserv.id}}</th>
-                        <td>{{reserv.desde}}</td>
-                        <td>{{reserv.hasta}}</td>
-                        <td>{{reserv.estado}}</td>
-                        <td>{{reserv.departamento.nombre}}</td>
-                        <td>{{reserv.usuario.nombre}}</td>
-                        <div>
-                            <td>
-                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                            </td>
-                            <td>
-                                <button  class="btn btn-success"><i class="bi bi-check-lg"></i></button>
-                            </td>
-                        </div>
-                    </tr>
-
+                <tr>
+                    <th scope="row">{{reserv.id}}</th>
+                    <td>{{reserv.desde}}</td>
+                    <td>{{reserv.hasta}}</td>
+                    <td>{{reserv.estado}}</td>
+                    <td>{{reserv.departamento.nombre}}</td>
+                    <td>{{reserv.usuario.nombre}}</td>
+                    <div>
+                        <td>
+                            <button (click)="rechazadaReserva()" class="btn btn-danger"><i
+                                    class="bi bi-trash3-fill"></i></button>
+                        </td>
+                        <td>
+                            <button (click)="activadaReserva()" class="btn btn-success"><i
+                                    class="bi bi-check-lg"></i></button>
+                        </td>
+                    </div>
+                </tr>
                 }
-                
-               
+
             </tbody>
         </table>
     </div>
