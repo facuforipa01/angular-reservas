@@ -1,5 +1,36 @@
 <!-- <app-navbar /> -->
+<mat-toolbar>
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+        <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+    </button>
+    Reservas
+</mat-toolbar>
 
-<router-outlet />
+<mat-sidenav-container>
+    <mat-sidenav>
+        <mat-nav-list>
+            <mat-list-item (click)="sidenav.mode === 'over' && sidenav.toggle()" routerLink="/admin">
+                <mat-icon matListItemIcon>home</mat-icon>
+                Home
+            </mat-list-item>
+            <mat-list-item (click)="sidenav.mode === 'over' && sidenav.toggle()" routerLink="/tabla">
+                <mat-icon matListItemIcon>event</mat-icon>
+                Reservas
+            </mat-list-item>
+            <mat-list-item (click)="sidenav.mode === 'over' && sidenav.toggle()" routerLink="/login">
+                <mat-icon matListItemIcon>logout</mat-icon>
+                Cerrar Sesion
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content">
+            <router-outlet />
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
 
 <!-- <app-footer /> -->

@@ -20,8 +20,14 @@ const routes: Routes = [
   },
   {
     path: 'tabla',
-    loadChildren: () => import('./tabla/tabla.module').then((m) => m.TablaModule),
+    loadChildren: () =>
+      import('./tabla/tabla.module').then((m) => m.TablaModule),
     //canActivate: [loginGuard],
+  },
+
+  {
+    path: '**',
+    redirectTo: '',
   },
 ];
 
