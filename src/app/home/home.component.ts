@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     this.homeService.getAllReservas().subscribe({
       next: (response) => {
         if (response.ok) {
-          this.reserva = response.reservas.data;
+          this.reserva = response.result.data;
         } else {
           console.error('Error en la respuesta:', response.msg);
         }

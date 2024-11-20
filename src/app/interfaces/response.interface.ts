@@ -2,7 +2,7 @@ import { ReservasI } from "./reservas.interface";
 
 export interface ResponseI {
     ok: boolean;
-    reservas: {
+    result: {
       data: ReservasI[];
       total: number;
       page: number;
