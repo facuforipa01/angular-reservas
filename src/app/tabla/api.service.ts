@@ -16,15 +16,14 @@ export class HomeService {
     return this.http.get<ResponseI>(`${this.url}/reservas`);
   }
 
-
-  //falta tomar el id (hardcodeado en 1)
-
-  rechazadoReserva(): Observable<any> {
-    return this.http.patch(`${this.url}/reservas/1/rechazar`, {})
+  rechazadoReserva(id:number): Observable<any> {
+    console.log('Esto andaaaa')
+    return this.http.patch<ResponseI<any>>(`${this.url}/reservas/${id}/rechazar`, {})
   }
 
-  activarReserva(): Observable<any> {
-    return this.http.patch(`${this.url}/reservas/1/aceptar`, {})
+  activarReserva(id:number): Observable<any> {
+    console.log('Esto andaaaa')
+    return this.http.patch<ResponseI<any>>(`${this.url}/reservas/${id}/aceptar`, {})
   }
 
 }

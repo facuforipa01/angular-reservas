@@ -19,7 +19,9 @@ export class HomeComponent implements OnInit {
     this.homeService.getAllReservas().subscribe({
       next: (response) => {
         if (response.ok) {
-          this.reserva = response.reservas.data;
+          console.log(response)
+          this.reserva = response.result.data;
+          console.log(this.reserva)
         } else {
           console.error('Error en la respuesta:', response.msg);
         }
@@ -27,12 +29,31 @@ export class HomeComponent implements OnInit {
       error: (err) => {
         console.error('Error al obtener reservas:', err);
       },
+
     });
   }
-  rechazadaReserva() {
-    this.homeService.rechazadoReserva();
+  rechazadaReserva(id: number) {
+    this.homeService.rechazadoReserva(id).subscribe(
+      (data) => {
+        alert(data.msg);
+        window.location.reload(); // Recarga toda la página
+      },
+      (error) => console.error('Error al rechazar la reserva:', error)
+    );
   }
-  activadaReserva() {
-    this.homeService.activarReserva();
+  
+  activadaReserva(id: number) {
+    this.homeService.activarReserva(id).subscribe(
+      (data) => {
+        alert(data.msg);
+        window.location.reload(); // Recarga toda la página
+      },
+      (error) => console.error('Error al aceptar la reserva:', error)
+    );
   }
-}
+
+  }
+
+
+
+

@@ -41,7 +41,7 @@ export class TablaComponent implements AfterViewInit {
     this.homeService.getAllReservas().subscribe({
       next: (response) => {
         if (response.ok) {
-          this.reserva = response.reservas.data;
+          this.reserva = response.result.data;
           this.dataSource.data = this.reserva;
           this.dataSource.sort = this.sort;
           this.dataSource.paginator = this.paginator;
@@ -62,10 +62,23 @@ export class TablaComponent implements AfterViewInit {
       this._liveAnnouncer.announce('Orden eliminado');
     }
   }
-  rechazadaReserva() {
-    this.homeService.rechazadoReserva();
+  rechazadaReserva(id: number) {
+    this.homeService.rechazadoReserva(id).subscribe(
+      (data) => {
+        alert(data.msg);
+        window.location.reload(); // Recarga toda la página
+      },
+      (error) => console.error('Error al rechazar la reserva:', error)
+    );
   }
-  activadaReserva() {
-    this.homeService.activarReserva();
+  
+  activadaReserva(id: number) {
+    this.homeService.activarReserva(id).subscribe(
+      (data) => {
+        alert(data.msg);
+        window.location.reload(); // Recarga toda la página
+      },
+      (error) => console.error('Error al aceptar la reserva:', error)
+    );
   }
 }
