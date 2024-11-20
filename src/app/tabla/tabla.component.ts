@@ -84,6 +84,22 @@ export class TablaComponent implements AfterViewInit {
         if (response.ok) {
           this.reserva = response.result.data;
           this.dataSource.data = this.reserva;
+          this.dataSource.sortingDataAccessor = (data, header) => {
+            switch (header) {
+              case 'cliente':
+                return data.usuario.nombre.toLowerCase();
+              case 'depto':
+                return data.departamento.nombre.toLowerCase();
+              case 'entrada':
+                return new Date(data.desde).getTime();
+              case 'salida':
+                return new Date(data.hasta).getTime();
+              case 'estado':
+                return data.estado.toLowerCase();
+              default:
+                return (data as any)[header];
+            }
+          };
           this.dataSource.sort = this.sort;
           this.dataSource.paginator = this.paginator;
         } else {
