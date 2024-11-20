@@ -1,0 +1,18 @@
+.tablacontenedor {
+    height: 100%;
+    overflow-y: hidden;
+    background-color: #101414;
+
+}
+
+.contenedorfijado {
+    position: fixed;
+    bottom: 0;
+    /* Fijar al final de la pantalla */
+    z-index: 100;
+    /* Asegurar que esté por encima de otros elementos */
+    background-color: #101414;
+    /* Fondo blanco para mantener contraste */
+    height: 10%;
+    width: 100%;
+}

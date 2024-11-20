@@ -15,15 +15,27 @@ import { ReservasI } from '../interfaces/reservas.interface';
 })
 export class TablaComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
+  // @ViewChild(MatSort) sort!: MatSort;
 
   reserva: ReservasI[] = [];
   dataSource = new MatTableDataSource<ReservasI>([]);
+ 
   displayedColumns: string[] = ['id', 'cliente', 'depto', 'entrada', 'salida', 'estado', 'accionAceptar', 'accionRechazar'];
 
   private _liveAnnouncer = inject(LiveAnnouncer);
 
-  constructor(private homeService: HomeService) {}
+  constructor(private homeService: HomeService) {
+    //
+    this.dataSource.sort = this.sort;
+  }
+
+  sortedData!: ReservasI[];
+
+  // Vincula el MatSort
+  @ViewChild(MatSort) sort!: MatSort;
+
+ 
+ 
 
   ngAfterViewInit() {
     this.homeService.getAllReservas().subscribe({
