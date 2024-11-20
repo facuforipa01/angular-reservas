@@ -39,13 +39,18 @@ export class HomeComponent implements OnInit {
         alert(data.msg);
         window.location.reload(); // Recarga toda la página
       },
-      (error) => console.error('Error al rechazar reserva:', error)
+      (error) => console.error('Error al rechazar la reserva:', error)
     );
   }
   
-
-  activadaReserva() {
-    this.homeService.activarReserva();
+  activadaReserva(id: number) {
+    this.homeService.activarReserva(id).subscribe(
+      (data) => {
+        alert(data.msg);
+        window.location.reload(); // Recarga toda la página
+      },
+      (error) => console.error('Error al aceptar la reserva:', error)
+    );
   }
 
   }

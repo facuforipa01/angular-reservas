@@ -46,7 +46,7 @@ export class LoginService {
   //constructor(private readonly http: HttpClient) {}
   private readonly http = inject(HttpClient);
   // URL de nuestra API Rest
-  private readonly url = 'http://localhost:3002/api/';
+  private readonly url = 'http://localhost:3000/api/';
 
   login(email:string,password:string){
     const direction = this.url + 'usuarios/auth/login';
