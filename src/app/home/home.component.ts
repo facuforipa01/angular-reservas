@@ -11,16 +11,18 @@ import { ReservasI } from '../interfaces/reservas.interface';
   providers: [],
 })
 
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
   reserva: ReservasI[] = [];
 
-  constructor(private homeService: HomeService) {}
+  constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
     this.homeService.getAllReservas().subscribe({
       next: (response) => {
         if (response.ok) {
-          this.reserva = response.reservas.data;
+          console.log(response)
+          this.reserva = response.result.data;
+          console.log(this.reserva)
         } else {
           console.error('Error en la respuesta:', response.msg);
         }
@@ -28,6 +30,26 @@ export class HomeComponent implements OnInit{
       error: (err) => {
         console.error('Error al obtener reservas:', err);
       },
+
     });
   }
-}
+  rechazadaReserva(id: number) {
+    this.homeService.rechazadoReserva(id).subscribe(
+      (data) => {
+        alert(data.msg);
+        window.location.reload(); // Recarga toda la página
+      },
+      (error) => console.error('Error al rechazar reserva:', error)
+    );
+  }
+  
+
+  activadaReserva() {
+    this.homeService.activarReserva();
+  }
+
+  }
+
+
+
+

@@ -1,12 +1,7 @@
 import { ReservasI } from "./reservas.interface";
 
-export interface ResponseI {
+export interface ResponseI<T = any> {
     ok: boolean;
-    reservas: {
-      data: ReservasI[];
-      total: number;
-      page: number;
-      limit: number;
-    };
+    result:T;
     msg: string;
   }

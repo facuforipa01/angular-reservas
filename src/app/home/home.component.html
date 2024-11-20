@@ -17,7 +17,7 @@
                 </tr>
             </thead>
             <tbody class="table-group-divider">
-                @for (reserv of reserva; track reserva) {
+                @for (reserv of reserva; track reserv.id) {
 
                     <tr>
                         <th scope="row">{{reserv.id}}</th>
@@ -28,10 +28,10 @@
                         <td>{{reserv.usuario.nombre}}</td>
                         <div>
                             <td>
-                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                                <button (click)="activadaReserva()" class="btn btn-success"><i class="bi bi-check-lg"></i></button>
                             </td>
                             <td>
-                                <button  class="btn btn-success"><i class="bi bi-check-lg"></i></button>
+                                <button (click)="rechazadaReserva(reserv.id)" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
                             </td>
                         </div>
                     </tr>

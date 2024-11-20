@@ -3,6 +3,10 @@ import { inject, Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { catchError, map, Observable, tap } from 'rxjs';
 import {serialize} from 'cookie'
+import { Token } from '@angular/compiler';
+import { ResponseI } from '../../interfaces/response.interface';
+import { TOKEN } from '../constants/service-keys';
+import { Router } from '@angular/router';
 
 
 export interface LoginResponse {
@@ -39,58 +43,43 @@ export interface UsuarioD {
 @Injectable({ providedIn: 'root' })
 export class LoginService {
 
-  private readonly cookies = inject(CookieService)
   //constructor(private readonly http: HttpClient) {}
   private readonly http = inject(HttpClient);
   // URL de nuestra API Rest
-  private readonly url = 'http://localhost:3000/api/';
+  private readonly url = 'http://localhost:3002/api/';
 
   login(email:string,password:string){
     const direction = this.url + 'usuarios/auth/login';
-    return this.http.post<{ ok: boolean; token: string; msg: string }>(direction,{
+    return this.http
+    .post<ResponseI<string>>(direction,{
       email,
-      password
+      password,
     })
     .pipe(
       catchError((e) => {
         console.log(e);
         throw new Error(e)
       }),
-      tap((data) => {
-        console.log(data);
-        localStorage.setItem('token', data.token)
-      }),
+      tap((data)=> this.saveTokenInCookies(data)),
+      map((data)=> data.result)
     );
   }
 
-  //* guardamos el token
-  setLocalStorage(token: string){
-    localStorage.setItem("x-token",token)
+  private readonly cookieService = inject(CookieService);
+  saveTokenInCookies(data: ResponseI<string>): void {
+    console.log(data)
+    this.cookieService.set(TOKEN, data.result, undefined, '/')
   }
 
-  //* recupera el token
-  getToken(){
-    return this.cookies.get("token")
+  removeTokenInCookies(){
+    this.cookieService.set(TOKEN, '', undefined, '/')
   }
 
-  // login(email: string, password: string) {
-  //   const direction = this.url + 'usuarios/auth/login';
-  //   return this.http
-  //     .post<any>(direction, {
-  //       email,
-  //       password,
-  //     })
-  //     .pipe(
-  //       catchError((e) => {
-  //         console.log(e.message);
-  //         throw new Error(e);
-  //       }),
-  //       tap((data) => {
-  //         console.log(data);
-  //         localStorage.setItem('x-token', data.token);
-  //       })
-  //     );
-  // }
+  private readonly router = inject(Router);
+  /** @description Todas las funciones para borrar las credenciales del usuario al desloguearse */
+  logout(){
+    this.removeTokenInCookies();
+    this.router.navigate(['login'], {replaceUrl: true});
 
-
+  }
 }
