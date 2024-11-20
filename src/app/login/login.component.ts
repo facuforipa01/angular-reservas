@@ -16,7 +16,7 @@ export class LoginComponent {
   login() {
     this.loginService.login(this.email, this.password).subscribe({
       next: (data) => {
-        this.router.navigate(['/admin'])
+        this.router.navigate(['/tabla'])
       },
       error: (e) => {
         console.error(e);

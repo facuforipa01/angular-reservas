@@ -1,11 +1,24 @@
+.main-container {
+  background-image: url(../assets/images/IMG_3842[1].JPG);
+  background-size: 140%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  background-position: 100% 50%;
+}
+
 .form {
-  background-color: #fff;
+background: rgba(31, 31, 31, 0.74);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(2.1px);
+-webkit-backdrop-filter: blur(1.1px);
   display: block;
-  padding: 1rem;
+  padding: 1.5rem;
   max-width: 350px;
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .form-title {
@@ -13,11 +26,13 @@
   line-height: 1.75rem;
   font-weight: 600;
   text-align: center;
-  color: #000;
+  color: #ffffff;
 }
 
-.input-container {
+.input-container+its-input{
   position: relative;
+  background-color: black !important;
+  
 }
 
 .button-container {
@@ -25,11 +40,16 @@
 }
 
 .button-container button {
+  width: 100%;
   cursor: pointer;
   outline: none;
   margin: 8px 0;
   border: none;
-  background: rgb(135, 135, 253);
+  background: rgba(34, 112, 38, 0.767);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(0.1px);
+-webkit-backdrop-filter: blur(0.1px);
   color: white;
   padding: 12px;
   border-radius: 1rem;
@@ -38,6 +58,7 @@
 }
 
 .button-container button:hover {
+  background-color: rgb(26, 94, 26);
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.336);
 }
 
@@ -47,7 +68,7 @@
   padding-bottom: 0.75rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  background-color: #4f46e5;
+  background-color: #ffffff;
   color: #ffffff;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -62,8 +83,11 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
   text-align: center;
+  margin-top: 0.4rem;
 }
 
 .signup-link a {
+
   text-decoration: underline;
+  color:  rgb(26, 94, 26);;
 }
