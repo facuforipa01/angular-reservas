@@ -2,17 +2,21 @@
     height: 100%;
     overflow-y: hidden;
     background-color: #101414;
-
+}
+.tabla-admin{
+    position: fixed;
+    top: 10%;
 }
 
 .contenedorfijado {
     position: fixed;
-    bottom: 0;
-    /* Fijar al final de la pantalla */
+    top: 0;
     z-index: 100;
-    /* Asegurar que esté por encima de otros elementos */
     background-color: #101414;
-    /* Fondo blanco para mantener contraste */
     height: 10%;
     width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    padding: 1%;
 }
