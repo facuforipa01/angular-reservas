@@ -5,13 +5,14 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { AfterViewInit, Component, ViewChild, inject } from '@angular/core';
 import { HomeService } from './api.service';
 import { ReservasI } from '../interfaces/reservas.interface';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-tabla',
   styleUrls: ['./tabla.component.css'], // Cambiado a styleUrls
   templateUrl: './tabla.component.html',
   standalone: true,
-  imports: [MatTableModule, MatPaginatorModule, MatSortModule],
+  imports: [MatTableModule, MatPaginatorModule, MatSortModule, CommonModule],
 })
 export class TablaComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;

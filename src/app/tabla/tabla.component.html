@@ -41,13 +41,13 @@
       <ng-container matColumnDef="accionRechazar">
         <th mat-header-cell *matHeaderCellDef> Rechazar </th>
         <td mat-cell *matCellDef="let element">
-          <button (click)="rechazadaReserva(element.id)" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+          <button *ngIf="element.estado=='pendiente' " (click)="rechazadaReserva(element.id)" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
         </td>
       </ng-container>
       <ng-container matColumnDef="accionAceptar">
         <th mat-header-cell *matHeaderCellDef> Aceptar </th>
         <td mat-cell *matCellDef="let element">
-          <button (click)="activadaReserva(element.id)" class="btn btn-success"><i class="bi bi-check-lg"></i></button>
+          <button *ngIf="element.estado=='pendiente' " (click)="activadaReserva(element.id)" class="btn btn-success"><i class="bi bi-check-lg"></i></button>
         </td>
       </ng-container>
   
