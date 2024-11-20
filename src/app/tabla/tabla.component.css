@@ -20,3 +20,9 @@
     align-items: start;
     padding: 1%;
 }
+
+.noMatch {
+    color: white;
+    margin: 5%;
+    font-size: medium;
+}
