@@ -22,8 +22,9 @@ import { CommonModule } from '@angular/common';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    CommonModule
-  , CommonModule],
+    CommonModule,
+    CommonModule,
+  ],
 })
 export class TablaComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -79,11 +80,20 @@ export class TablaComponent implements AfterViewInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   ngAfterViewInit() {
+    this.fetchReservas();
+  }
+
+  fetchReservas() {
+
+    const currentPageIndex = this.paginator?.pageIndex || 0;
+
     this.homeService.getAllReservas().subscribe({
       next: (response) => {
         if (response.ok) {
           this.reserva = response.result.data;
           this.dataSource.data = this.reserva;
+          this.paginator.pageIndex = currentPageIndex;
+
           this.dataSource.sortingDataAccessor = (data, header) => {
             switch (header) {
               case 'cliente':
@@ -119,24 +129,35 @@ export class TablaComponent implements AfterViewInit {
       this._liveAnnouncer.announce('Orden eliminado');
     }
   }
+
   rechazadaReserva(id: number) {
-    this.homeService.rechazadoReserva(id).subscribe(
-      (data) => {
-        alert(data.msg);
-        window.location.reload(); // Recarga toda la página
-      },
-      (error) => console.error('Error al rechazar la reserva:', error)
+    const confirmacion = window.confirm(
+      '¿Estás seguro de que deseas rechazar esta reserva?'
     );
-  }
   
+    if (confirmacion) {
+      this.homeService.rechazadoReserva(id).subscribe({
+        next: () => {
+          this.fetchReservas(); // Actualiza los datos manteniendo la página actual.
+        },
+        error: (err) => console.error('Error al rechazar la reserva:', err),
+      });
+    }
+  }
+
   activadaReserva(id: number) {
-    this.homeService.activarReserva(id).subscribe(
-      (data) => {
-        alert(data.msg);
-        window.location.reload(); // Recarga toda la página
-      },
-      (error) => console.error('Error al aceptar la reserva:', error)
+    const confirmacion = window.confirm(
+      '¿Estás seguro de que deseas aceptar esta reserva?'
     );
+  
+    if (confirmacion) {
+      this.homeService.activarReserva(id).subscribe({
+        next: () => {
+          this.fetchReservas(); // Actualiza los datos manteniendo la página actual.
+        },
+        error: (err) => console.error('Error al aceptar la reserva:', err),
+      });
+    }
   }
 
   applyFilter(event: Event) {
