@@ -9,7 +9,6 @@
   background-color: black;
   background-position: 100% 50%;
 }
-
 .form {
 background: rgba(31, 31, 31, 0.74);
 border-radius: 16px;
@@ -20,7 +19,6 @@ backdrop-filter: blur(2.1px);
   padding: 1.5rem;
   max-width: 350px;
 }
-
 .form-title {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -28,17 +26,14 @@ backdrop-filter: blur(2.1px);
   text-align: center;
   color: #ffffff;
 }
-
 .input-container+its-input{
   position: relative;
   background-color: black !important;
   
 }
-
 .button-container {
   text-align: center;
 }
-
 .button-container button {
   width: 100%;
   cursor: pointer;

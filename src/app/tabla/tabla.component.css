@@ -7,7 +7,6 @@
     position: fixed;
     top: 10%;
 }
-
 .contenedorfijado {
     position: fixed;
     top: 0;
@@ -20,7 +19,6 @@
     align-items: start;
     padding: 1%;
 }
-
 .noMatch {
     color: white;
     margin: 5%;

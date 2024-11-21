@@ -14,11 +14,6 @@ const routes: Routes = [
       import('./login/login.module').then((m) => m.LoginModule),
   },
   {
-    path: 'admin',
-    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
-    //canActivate: [loginGuard],
-  },
-  {
     path: 'tabla',
     loadChildren: () => import('./tabla/tabla.module').then((m) => m.TablaModule),
     //canActivate: [loginGuard],

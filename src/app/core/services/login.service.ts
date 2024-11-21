@@ -13,13 +13,11 @@ export interface LoginResponse {
   token: string;
   usuario: UsuarioD;
 }
-
 export interface UserI{
   email: string;
   password: string;
   token: string;
 }
-
 export interface UsuarioD {
   id: number;
   usuario: string;
@@ -39,10 +37,8 @@ export interface UsuarioD {
   imagen_perfil: string;
   superadmin: number;
 }
-
 @Injectable({ providedIn: 'root' })
 export class LoginService {
-
   //constructor(private readonly http: HttpClient) {}
   private readonly http = inject(HttpClient);
   // URL de nuestra API Rest

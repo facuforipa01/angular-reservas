@@ -10,7 +10,6 @@ describe('jwtInterceptor', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({});
   });
-
   it('should be created', () => {
     expect(interceptor).toBeTruthy();
   });

@@ -28,7 +28,6 @@ import { CommonModule } from '@angular/common';
 })
 export class TablaComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  // @ViewChild(MatSort) sort!: MatSort;
 
   reserva: ReservasI[] = [];
   dataSource = new MatTableDataSource<ReservasI>([]);
@@ -47,7 +46,6 @@ export class TablaComponent implements AfterViewInit {
   private _liveAnnouncer = inject(LiveAnnouncer);
 
   constructor(private homeService: HomeService) {
-    //
     this.dataSource.sort = this.sort;
 
     this.dataSource.filterPredicate = (
@@ -55,14 +53,10 @@ export class TablaComponent implements AfterViewInit {
       filter: string
     ): boolean => {
       const lowerCaseFilter = filter.trim().toLowerCase();
-
-      // Convertir las fechas a cadena para filtrar
       const desdeString =
         data.desde instanceof Date ? data.desde.toISOString() : data.desde;
       const hastaString =
         data.hasta instanceof Date ? data.hasta.toISOString() : data.hasta;
-
-      // Combinar todas las propiedades en una sola cadena para buscar
       return (
         data.id.toString().toLowerCase().includes(lowerCaseFilter) ||
         data.usuario.nombre.toLowerCase().includes(lowerCaseFilter) ||
@@ -75,25 +69,19 @@ export class TablaComponent implements AfterViewInit {
   }
 
   sortedData!: ReservasI[];
-
-  // Vincula el MatSort
   @ViewChild(MatSort) sort!: MatSort;
 
   ngAfterViewInit() {
     this.fetchReservas();
   }
-
   fetchReservas() {
-
     const currentPageIndex = this.paginator?.pageIndex || 0;
-
     this.homeService.getAllReservas().subscribe({
       next: (response) => {
         if (response.ok) {
           this.reserva = response.result.data;
           this.dataSource.data = this.reserva;
           this.paginator.pageIndex = currentPageIndex;
-
           this.dataSource.sortingDataAccessor = (data, header) => {
             switch (header) {
               case 'cliente':
@@ -121,7 +109,6 @@ export class TablaComponent implements AfterViewInit {
       },
     });
   }
-
   announceSortChange(sortState: Sort) {
     if (sortState.direction) {
       this._liveAnnouncer.announce(`Ordenado en orden ${sortState.direction}`);
@@ -129,12 +116,10 @@ export class TablaComponent implements AfterViewInit {
       this._liveAnnouncer.announce('Orden eliminado');
     }
   }
-
   rechazadaReserva(id: number) {
     const confirmacion = window.confirm(
       '¿Estás seguro de que deseas rechazar esta reserva?'
     );
-  
     if (confirmacion) {
       this.homeService.rechazadoReserva(id).subscribe({
         next: () => {
@@ -144,12 +129,10 @@ export class TablaComponent implements AfterViewInit {
       });
     }
   }
-
   activadaReserva(id: number) {
     const confirmacion = window.confirm(
       '¿Estás seguro de que deseas aceptar esta reserva?'
     );
-  
     if (confirmacion) {
       this.homeService.activarReserva(id).subscribe({
         next: () => {
@@ -159,12 +142,9 @@ export class TablaComponent implements AfterViewInit {
       });
     }
   }
-
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    // Reinicia la paginación al aplicar un filtro
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
