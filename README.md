@@ -1,3 +1,11 @@
+Integrantes del trabajo practico Final:
+Facundo Folatelli
+Agustin Gonzalez
+Mariano Orozco
+Jeremias Carrera
+Bruno Ruiz
+Micaela Aranguiz
+
 # AngularReservas
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
