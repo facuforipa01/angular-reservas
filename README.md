@@ -1,10 +1,99 @@
-Integrantes del trabajo practico Final:
-Facundo Folatelli
-Agustin Gonzalez
-Mariano Orozco
-Jeremias Carrera
-Bruno Ruiz
-Micaela Aranguiz
+## 🏆 Miembros del grupo
+
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center;">
+  <div>
+    <img src="https://avatars.githubusercontent.com/u/111397434?v=4" alt="Facundo Folatelli" width="150" style="border-radius: 50%;">
+    <p><b>Facundo Folatelli</b><br>Desarrollador Full Stack</p>
+    <a href="https://github.com/facuforipa01" target="_blank">
+      <img src="https://img.shields.io/badge/GitHub-facuforipa01-blue?logo=github" alt="GitHub de Facundo Folatelli">
+    </a>
+  </div>
+  <div>
+    <img src="https://avatars.githubusercontent.com/u/112430352?s=400&u=5978d7ac66ab504573a134b6a706717d559faaa6&v=4" alt="Agustín Gonzalez" width="150" style="border-radius: 50%;">
+    <p><b>Agustín Gonzalez</b><br>Desarrollador Full Stack</p>
+    <a href="https://github.com/Agus-IG" target="_blank">
+      <img src="https://img.shields.io/badge/GitHub-Agus--IG-blue?logo=github" alt="GitHub de Agustín Gonzalez">
+    </a>
+  </div>
+  <div>
+    <img src="https://avatars.githubusercontent.com/u/111398222?v=4" alt="Mariano Orozco" width="150" style="border-radius: 50%;">
+    <p><b>Mariano Orozco</b><br>Desarrollador Full Stack</p>
+    <a href="https://github.com/Mariano2001O" target="_blank">
+      <img src="https://img.shields.io/badge/GitHub-Mariano2001O-blue?logo=github" alt="GitHub de Mariano Orozco">
+    </a>
+  </div>
+  <div>
+    <img src="https://avatars.githubusercontent.com/u/71900721?v=4" alt="Bruno Ruiz" width="150" style="border-radius: 50%;">
+    <p><b>Bruno Ruiz</b><br>Desarrollador Full Stack</p>
+    <a href="https://github.com/Bruno844" target="_blank">
+      <img src="https://img.shields.io/badge/GitHub-Bruno844-blue?logo=github" alt="GitHub de Bruno Ruiz">
+    </a>
+  </div>
+  <div>
+    <img src="https://media.licdn.com/dms/image/v2/D4D03AQHQ6Vc98-WXxQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1727911461476?e=1737590400&v=beta&t=RLNX4disukhQQmo94lGEHIhO0BpBLgO94iw-6jIPynk" alt="Jeremias Carrera" width="150" style="border-radius: 50%;">
+    <p><b>Jeremias Carrera</b><br>Desarrollador Full Stack</p>
+    <a href="https://github.com/Jere-c" target="_blank">
+      <img src="https://img.shields.io/badge/GitHub-Jere--c-blue?logo=github" alt="GitHub de Jeremias Carrera">
+    </a>
+  </div>
+  <div>
+    <img src="https://media.licdn.com/dms/image/v2/D4E03AQEuBYlQFbuZNg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1693509989231?e=1737590400&v=beta&t=6RaJ2NRI1P2h2ZH7Okd5_RmxfMrCWl7kYu4DtW8Adho" alt="Micaela Aranguiz" width="150" style="border-radius: 50%;">
+    <p><b>Micaela Aranguiz</b><br>Desarrolladora Full Stack</p>
+    <a href="https://github.com/MicaAranguiz" target="_blank">
+      <img src="https://img.shields.io/badge/GitHub-MicaAranguiz-blue?logo=github" alt="GitHub de Micaela Aranguiz">
+    </a>
+  </div>
+</div>
+
+
+
+### 👤 Facundo Folatelli
+<img src="https://avatars.githubusercontent.com/u/111397434?v=4" alt="Facundo Folatelli" width="150" style="border-radius: 50%;">
+
+**Rol**: Desarrollador Full Stack  
+**Contacto**: [GitHub](https://github.com/facuforipa01)
+
+---
+
+### 👤 Agustín Gonzalez
+<img src="https://avatars.githubusercontent.com/u/112430352?s=400&u=5978d7ac66ab504573a134b6a706717d559faaa6&v=4" alt="Agustín Gonzalez" width="150" style="border-radius: 50%;">
+
+**Rol**: Desarrollador Full Stack  
+**Contacto**: [GitHub](https://github.com/Agus-IG)
+
+---
+
+### 👤 Mariano Orozco
+<img src="https://avatars.githubusercontent.com/u/111398222?v=4" alt="Mariano Orozco" width="150" style="border-radius: 50%;">
+
+**Rol**: Desarrollador Full Stack  
+**Contacto**: [GitHub](https://github.com/Mariano2001O)
+
+---
+
+### 👤 Bruno Ruiz
+<img src="https://avatars.githubusercontent.com/u/71900721?v=4" alt="Bruno Ruiz" width="150" style="border-radius: 50%;">
+
+**Rol**: Desarrollador Full Stack  
+**Contacto**: [GitHub](https://github.com/Bruno844)
+
+---
+
+### 👤 Jeremias Carrera
+<img src="https://media.licdn.com/dms/image/v2/D4D03AQHQ6Vc98-WXxQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1727911461476?e=1737590400&v=beta&t=RLNX4disukhQQmo94lGEHIhO0BpBLgO94iw-6jIPynk" alt="Jeremias Carrera" width="150" style="border-radius: 50%;">
+
+**Rol**: Desarrollador Full Stack  
+**Contacto**: [GitHub](https://github.com/Jere-c)
+
+---
+
+### 👤 Micaela Aranguiz
+<img src="https://media.licdn.com/dms/image/v2/D4E03AQEuBYlQFbuZNg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1693509989231?e=1737590400&v=beta&t=6RaJ2NRI1P2h2ZH7Okd5_RmxfMrCWl7kYu4DtW8Adho" alt="Micaela Aranguiz" width="150" style="border-radius: 50%;">
+
+**Rol**: Desarrollador Full Stack  
+**Contacto**: [GitHub](https://github.com/MicaAranguiz)
+
+---
 
 # AngularReservas
 
