@@ -44,54 +44,7 @@
     </a>
   </div>
 </div>
-
-
-
-### 👤 Facundo Folatelli
-<img src="https://avatars.githubusercontent.com/u/111397434?v=4" alt="Facundo Folatelli" width="150" style="border-radius: 50%;">
-
-**Rol**: Desarrollador Full Stack  
-**Contacto**: [GitHub](https://github.com/facuforipa01)
-
----
-
-### 👤 Agustín Gonzalez
-<img src="https://avatars.githubusercontent.com/u/112430352?s=400&u=5978d7ac66ab504573a134b6a706717d559faaa6&v=4" alt="Agustín Gonzalez" width="150" style="border-radius: 50%;">
-
-**Rol**: Desarrollador Full Stack  
-**Contacto**: [GitHub](https://github.com/Agus-IG)
-
----
-
-### 👤 Mariano Orozco
-<img src="https://avatars.githubusercontent.com/u/111398222?v=4" alt="Mariano Orozco" width="150" style="border-radius: 50%;">
-
-**Rol**: Desarrollador Full Stack  
-**Contacto**: [GitHub](https://github.com/Mariano2001O)
-
----
-
-### 👤 Bruno Ruiz
-<img src="https://avatars.githubusercontent.com/u/71900721?v=4" alt="Bruno Ruiz" width="150" style="border-radius: 50%;">
-
-**Rol**: Desarrollador Full Stack  
-**Contacto**: [GitHub](https://github.com/Bruno844)
-
----
-
-### 👤 Jeremias Carrera
-<img src="https://media.licdn.com/dms/image/v2/D4D03AQHQ6Vc98-WXxQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1727911461476?e=1737590400&v=beta&t=RLNX4disukhQQmo94lGEHIhO0BpBLgO94iw-6jIPynk" alt="Jeremias Carrera" width="150" style="border-radius: 50%;">
-
-**Rol**: Desarrollador Full Stack  
-**Contacto**: [GitHub](https://github.com/Jere-c)
-
----
-
-### 👤 Micaela Aranguiz
-<img src="https://media.licdn.com/dms/image/v2/D4E03AQEuBYlQFbuZNg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1693509989231?e=1737590400&v=beta&t=6RaJ2NRI1P2h2ZH7Okd5_RmxfMrCWl7kYu4DtW8Adho" alt="Micaela Aranguiz" width="150" style="border-radius: 50%;">
-
-**Rol**: Desarrollador Full Stack  
-**Contacto**: [GitHub](https://github.com/MicaAranguiz)
+<br>
 
 ---
 
